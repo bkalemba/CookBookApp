@@ -1,20 +1,25 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: benek
-  Date: 25.10.18
-  Time: 16:12
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link href="/resources/style/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/style/default.css" rel="stylesheet">
     <title>CookBookApp</title>
 </head>
 <body>
-<h2>Wyniki wyszukiwania</h2>
-<c:forEach items="${searchResult}" var="recipe">
-    <a href="/recipe/${recipe.id}">${recipe.title}</a><br>
-</c:forEach>
+<jsp:include page="../fragments/navbar.jsp"/>
+<div class="container">
+    <div class="row justify-content-md-center">
+
+        <h2>Wyniki wyszukiwania</h2>
+    </div>
+    <div class="row justify-content-md-center">
+        <ol>
+        <c:forEach items="${searchResult}" var="recipe">
+            <li><a href="/recipe/${recipe.id}">${recipe.title}</a></li>
+        </c:forEach>
+        </ol>
+    </div>
+</div>
 </body>
 </html>

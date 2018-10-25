@@ -1,17 +1,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: benek
-  Date: 23.10.18
-  Time: 17:53
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link href="/resources/style/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/style/default.css" rel="stylesheet">
     <title>CookBookApp</title>
 </head>
 <body>
+<jsp:include page="../fragments/navbar.jsp"/>
 <h2>Jednostki</h2>
 <a href="/admin/">Powrót</a><br>
 <a href="/admin/unit/add">Dodaj</a><br>

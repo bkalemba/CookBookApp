@@ -1,17 +1,14 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: benek
-  Date: 23.10.18
-  Time: 18:02
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link href="/resources/style/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/style/default.css" rel="stylesheet">
     <title>CookBookApp</title>
 </head>
 <body>
+<jsp:include page="../fragments/navbar.jsp"/>
 <h2>Produkty</h2>
 <a href="/admin/product/">Powrót</a><br>
 <form:form modelAttribute="product" method="post">
