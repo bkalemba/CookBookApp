@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import pl.coderslab.cookbookapp.beans.CategoryRepository;
@@ -109,6 +108,15 @@ public class HomeController {
         model.addAttribute("recipe", recipeRepository.findById(id).get());
         model.addAttribute("recipeIngredients", ingredientRepository.findAllByRecipeId(id));
         return "recipe/showRecipe";
+    }
+
+    @GetMapping("/random")
+    public String showRandom(){
+        List<Long> recipeIds = recipeRepository.findAllIds();
+        Long[] ids = recipeIds.toArray(new Long[recipeIds.size()]);
+        Random random = new Random();
+        Long id = ids[random.nextInt(ids.length)];
+        return "redirect:/recipe/"+id;
     }
 
     private boolean containsRecipe(List<Recipe> recipes, Recipe recipe){
